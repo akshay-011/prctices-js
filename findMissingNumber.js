@@ -4,9 +4,15 @@
 
 // Example:
 // findMissingNumber([1, 2, 4], 4) → 3
+// findMissingNumber([1, 4, 2], 4) → 3
+
+const substract = function (value1, value2) {
+  return value1 - value2;
+};
 
 const findMissingNumber = function (array, length) {
-  return length;
+  const ascendingOrder = array.sort(substract);
+  return ascendingOrder;
 };
 
 // ======================>Testing starts<=================================
