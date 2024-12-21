@@ -6,13 +6,14 @@
 // findMissingNumber([1, 2, 4], 4) → 3
 // findMissingNumber([1, 4, 2], 4) → 3
 
-const substract = function (value1, value2) {
-  return value1 - value2;
-};
-
 const findMissingNumber = function (array, length) {
-  const ascendingOrder = array.sort(substract);
-  return ascendingOrder;
+  for (let number = 1; number <= length; number++) {
+    if (!array.includes(number)) {
+      return number;
+    }
+  }
+
+  return 0;
 };
 
 // ======================>Testing starts<=================================
@@ -40,6 +41,9 @@ const isSame = function (value1, value2) {
 
 const testCases = [
   [findMissingNumber, [[1, 2, 3], 4], 4],
+  [findMissingNumber, [[1, 3, 2], 4], 4],
+  [findMissingNumber, [[1, 3, 2], 4], 4],
+  [findMissingNumber, [[3, 2, 4], 4], 1],
 ];
 
 const test = function (failed, [fname, inputs, expcted]) {
