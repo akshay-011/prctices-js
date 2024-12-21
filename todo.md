@@ -3,9 +3,9 @@
   * flattenArray
   * longestWord
   * removeDuplicates
+  * counterWithExtraThings
 
 # to complete
-  * counterWithExtraThings
   * findPalindrome
   * memorizeThing
   * combine objects
