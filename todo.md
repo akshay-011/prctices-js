@@ -6,6 +6,5 @@
   * counterWithExtraThings
 
 # to complete
-  * findPalindrome
   * memorizeThing
   * combine objects
