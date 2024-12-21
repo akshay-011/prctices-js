@@ -13,10 +13,6 @@ const unwrap = function (element) {
 };
 
 const flattenArray = function (nestedArray) {
-  if (nestedArray.length === 0) {
-    return nestedArray;
-  }
-
   const flattenedArray = [];
 
   for (const element of nestedArray) {
