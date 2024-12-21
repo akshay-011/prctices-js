@@ -4,11 +4,26 @@
 // Example:
 // flattenArray([1, [2, 3], [4, [5, 6]]]) → [1, 2, 3, 4, 5, 6]
 
+const unwrap = function (element) {
+  if (Array.isArray(element)) {
+    return flattenArray(element);
+  }
+
+  return [element];
+};
+
 const flattenArray = function (nestedArray) {
   if (nestedArray.length === 0) {
     return nestedArray;
   }
 
+  const flattenedArray = [];
+
+  for (const element of nestedArray) {
+    flattenedArray.push(...unwrap(element));
+  }
+
+  return flattenedArray;
 };
 
 // ======================>Testing starts<=================================
@@ -37,6 +52,7 @@ const isSame = function (value1, value2) {
 const testCases = [
   [flattenArray, [[]], []],
   [flattenArray, [[1, 2, [1]]], [1, 2, 1]],
+  [flattenArray, [[1, 2, [1, 2, [1, 2, [1, 2]]]]], [1, 2, 1, 2, 1, 2, 1, 2]],
 ];
 
 const test = function (failed, [fname, inputs, expcted]) {
