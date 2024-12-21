@@ -3,3 +3,13 @@
 
 // Example:
 // const fastFib = memoize(fib) where fib(n) calculates the nth Fibonacci number.
+
+function memoize(fn) {
+  let lastResult = 0;
+
+  return function (...inputs) {
+    lastResult = fn(...inputs);
+
+    return lastResult;
+  };
+}

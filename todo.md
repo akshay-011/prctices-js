@@ -4,7 +4,7 @@
   * longestWord
   * removeDuplicates
   * counterWithExtraThings
+  * memorizeThing
 
 # to complete
-  * memorizeThing
   * combine objects
