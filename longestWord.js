@@ -5,8 +5,12 @@
 // Example:
 // findLongestWord("The quick brown fox jumped") → "jumped"
 
+const findMaxString = function (currentMax, candidateString) {
+  return currentMax.length > candidateString.length ? currentMax : candidateString;
+};
+
 const findLongestWord = function (sentence) {
-  return sentence;
+  return sentence.split(" ").reduce(findMaxString, "");
 };
 
 // ======================>Testing starts<=================================
@@ -35,6 +39,8 @@ const isSame = function (value1, value2) {
 const testCases = [
   [findLongestWord, ["akshay"], "akshay"],
   [findLongestWord, ["akshay kumar"], "akshay"],
+  [findLongestWord, ["akshay kumar is "], "akshay"],
+  [findLongestWord, ["akshay kumar is goodboy"], "goodboy"],
 ];
 
 const test = function (failed, [fname, inputs, expcted]) {
