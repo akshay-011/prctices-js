@@ -1,23 +1,3 @@
-// Write a function removeDuplicates(arr) that takes an array as input & 
-// returns a new array with all duplicate values removed. 
-// Do not use the Set object or filter() method.
-
-const filterDulicates = function (uniqueArray, element) {
-  if (!uniqueArray.includes(element)) {
-    uniqueArray.push(element);
-  }
-
-  return uniqueArray;
-};
-
-const removeDuplicates = function (array) {
-  if (array.length === 0) {
-    return array;
-  }
-
-  return array.reduce(filterDulicates, []);
-};
-
 // ======================>Testing starts<=================================
 const areArraysEqual = function (array1, array2) {
   if (array1.length !== array2.length) {
@@ -42,9 +22,7 @@ const isSame = function (value1, value2) {
 };
 
 const testCases = [
-  [removeDuplicates, [[]], []],
-  [removeDuplicates, [[1]], [1]],
-  [removeDuplicates, [[1, 1]], [1]],
+  [fname, inputs, expcted],
 ];
 
 const test = function (failed, [fname, inputs, expcted]) {
