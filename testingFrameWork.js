@@ -1,11 +1,11 @@
 // ======================>Testing starts<=================================
-const areArraysEqual = function (array1, array2) {
-  if (array1.length !== array2.length) {
+const areArraysEqual = function (value1, value2) {
+  if (value1.length !== value2.length) {
     return false;
   }
 
-  for (let index = 0; index < array1.length; index++) {
-    if (!isSame(array1[index], array2[index])) {
+  for (let index = 0; index < value1.length; index++) {
+    if (!isSame(value1[index], value2[index])) {
       return false;
     }
   }
@@ -22,10 +22,12 @@ const isSame = function (value1, value2) {
 };
 
 const testCases = [
-  [fname, inputs, expcted],
+  { fname: fun, inputs: [], expcted: "" },
+  { fname: fun, inputs: [], expcted: "" },
+  { fname: fun, inputs: [], expcted: "" },
 ];
 
-const test = function (failed, [fname, inputs, expcted]) {
+const test = function (failed, { fname, inputs, expcted }) {
   const actual = fname(...inputs);
 
   if (!isSame(actual, expcted)) {
